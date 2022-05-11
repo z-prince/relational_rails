@@ -1,3 +1,5 @@
 class AuthorController < ApplicationController
-  def index; end
+  def index
+    @authors = Author.all
+  end
 end
