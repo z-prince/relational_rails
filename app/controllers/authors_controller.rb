@@ -1,6 +1,5 @@
 class AuthorsController < ApplicationController
   def index
-    binding.pry
     @authors = Author.all
   end
 
