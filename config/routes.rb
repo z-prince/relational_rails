@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/authors/:id', to: 'authors#show'
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
-  get '/authors/:id/books', to 'authors#' # last working spot for tonight
+  # get '/authors/:id/books', to 'authors#' # last working spot for tonight
 end
