@@ -1,0 +1,2 @@
+class AutherBooksController < ApplicationController
+end
