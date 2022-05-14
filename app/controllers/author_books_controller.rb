@@ -1,2 +1,3 @@
-class AutherBooksController < ApplicationController
+class AuthorBooksController < ApplicationController
+  def index; end
 end
