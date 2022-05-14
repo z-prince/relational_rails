@@ -1,3 +1,6 @@
 class AuthorBooksController < ApplicationController
-  def index; end
+  def index
+    @author = Author.find(params[:id])
+    @books = @author.books
+  end
 end
