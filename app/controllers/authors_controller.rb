@@ -4,7 +4,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.find(params[:id])
+    @author = Author.find(params[:author_id])
   end
 
   def new; end
@@ -15,11 +15,11 @@ class AuthorsController < ApplicationController
   end
 
   def edit
-    @author = Author.find(params[:id])
+    @author = Author.find(params[:author_id])
   end
 
   def update
-    artist = Author.find(params[:id])
+    artist = Author.find(params[:author_id])
     artist.update(author_params)
     redirect_to '/authors'
   end
