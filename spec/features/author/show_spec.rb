@@ -33,4 +33,13 @@ RSpec.describe 'The book show page' do
     save_and_open_page
     expect(page).to have_content(author.books.count)
   end
+
+  it 'has a link to and updates parent' do
+    author = Author.create!(name: 'Fleppy Caliper', living: true, pullitzer_prizes: 123)
+
+    visit '/authors/1'
+    expect(page).to have_content('Fleppy Caliper')
+    click_link 'Edit Author Entry'
+    expect(page).to have_content
+  end
 end

@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.short_time
+    @authors = Author.all
   end
 
   def show
@@ -11,6 +11,16 @@ class AuthorsController < ApplicationController
 
   def create
     author = Author.create(author_params)
+    redirect_to '/authors'
+  end
+
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    artist = Author.find(params[:id])
+    artist.update(author_params)
     redirect_to '/authors'
   end
 
