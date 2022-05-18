@@ -8,8 +8,20 @@ RSpec.describe 'The author index page' do
 
     visit '/authors/'
 
-    click_link('Update Author')
+    click_link('Update Samantha Moore')
 
     expect(current_path).to eq("/authors/#{author1.id}/edit")
+
+    visit '/authors/'
+
+    click_link('Update Janis Jalokie')
+
+    expect(current_path).to eq("/authors/#{author2.id}/edit")
+
+    visit '/authors/'
+
+    click_link('Update Galia Kurvinsky')
+
+    expect(current_path).to eq("/authors/#{author3.id}/edit")
   end
 end
