@@ -8,4 +8,12 @@ class AuthorsController < ApplicationController
   end
 
   def new; end
+
+  def create; end
+
+  private
+
+  def author_params
+    params.permit(:name, :living, :pullitzer_prizes)
+  end
 end
