@@ -12,6 +12,7 @@
         <p>Genre: <%= book.genre %></p>
         <p>Fictitious: <%= book.fictitious %></p>
         <p>Pages: <%= book.pages %></p>
+        <%= link_to "Update #{book.name}", "/books/#{book.id}/edit" %>
     <% end %>
     </ul>
 
