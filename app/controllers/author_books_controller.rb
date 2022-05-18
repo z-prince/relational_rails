@@ -1,7 +1,12 @@
 class AuthorBooksController < ApplicationController
   def index
+    # binding.pry
     @author = Author.find(params[:author_id])
-    @books = @author.books
+    @books = if params[:name] == 'Alphabetical'
+               @author.books.order(Arel.sql('lower(name)')) # .order
+             else
+               @author.books
+             end
   end
 
   def new

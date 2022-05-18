@@ -2,10 +2,12 @@
 <%= link_to 'All Authors', '/authors' %>
 
 <h2><%= @author.name %></h2>
-  <h3>Books</h3>
 
+<%= link_to 'Sort Alphabetically', "/authors/#{@author.id}/books/?name=Alphabetical" %>
+  <h3>Books</h3>
     <ul>
       <% @books.each do | book | %>
+        
         <h4><li><%= book.name %></li></h4>
         <p>Genre: <%= book.genre %></p>
         <p>Fictitious: <%= book.fictitious %></p>
