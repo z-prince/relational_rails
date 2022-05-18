@@ -11,7 +11,7 @@ RSpec.describe 'The book show page' do
 
     click_link 'Sort Alphabetically'
 
-    expect(current_path).to eq "/authors/#{author.id}/books"
+    expect(current_path).to eq "/authors/#{author.id}/books/"
 
     expect(book3.name).to appear_before(book1.name)
 
