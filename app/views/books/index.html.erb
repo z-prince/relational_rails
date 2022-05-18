@@ -6,5 +6,6 @@
 <% @books.each do |book|%>
   <% if book.fictitious == true %>
     <h3><%= book.name  %></h3>
+<%= link_to "Update #{book.name}", "/books/#{book.id}/edit" %>
   <% end %>
 <% end %>
