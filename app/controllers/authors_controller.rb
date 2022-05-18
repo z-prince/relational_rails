@@ -9,7 +9,10 @@ class AuthorsController < ApplicationController
 
   def new; end
 
-  def create; end
+  def create
+    author = Author.create(author_params)
+    redirect_to '/authors'
+  end
 
   private
 
