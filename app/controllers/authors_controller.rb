@@ -14,6 +14,12 @@ class AuthorsController < ApplicationController
     redirect_to '/authors'
   end
 
+  def update
+    artist = Author.find(params[:id])
+    artist.update(artist_params)
+    redirect_to '/authors'
+  end
+
   private
 
   def author_params
