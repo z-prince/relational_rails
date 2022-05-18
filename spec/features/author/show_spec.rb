@@ -42,4 +42,23 @@ RSpec.describe 'The book show page' do
     click_link 'Edit Author Entry'
     expect(page).to have_content
   end
+
+  it 'deletes the parent' do
+    author1 = Author.create!(name: 'Samantha Moore', living: true, pullitzer_prizes: 123)
+    author2 = Author.create!(name: 'Janis Jalokie', living: true, pullitzer_prizes: 312)
+    author3 = Author.create!(name: 'Galia Kurvinsky', living: false, pullitzer_prizes: 938)
+    book1 = Book.create!(name: 'Descencus', pages: 208, genre: 'Thriller', fictitious: true, author_id: author1.id)
+    book2 = Book.create!(name: 'Help', pages: 463, genre: 'Philosophy', fictitious: true, author_id: author1.id)
+    book3 = Book.create!(name: 'Folly', pages: 281, genre: 'Thriller', fictitious: true, author_id: author2.id)
+    book4 = Book.create!(name: 'Ascendance', pages: 192, genre: 'Self Help', fictitious: true, author_id: author2.id)
+    book5 = Book.create!(name: 'Wired', pages: 401, genre: 'Mystery', fictitious: true, author_id: author3.id)
+    book6 = Book.create!(name: 'Sabotage', pages: 192, genre: 'Mystery', fictitious: true, author_id: author3.id)
+
+    visit "/authors/#{author1.id}"
+
+    click_link 'Delete Author'
+
+    expect(current_path).to eq('/authors')
+    expect(page).to_not have_content('Samantha Moore')
+  end
 end
