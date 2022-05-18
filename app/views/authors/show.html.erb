@@ -1,11 +1,11 @@
-<a href='/books'>Books<a/>
-<a href='/authors'>Authors<a/>
+<%= link_to 'All Books', '/books' %>
+<%= link_to 'All Authors', '/authors' %>
 
 <h3><%= @author.name %></h3>
 <a href='/authors/<%= @author.id %>/books'>Books by <%= @author.name %><a/>
 <ul>
   <li>Living: <%= @author.living %></li>
-  <li>Pullitzer Prizes: <%= @author.pullitzer_prizes %></li>
+  <li>Pullitzer Prizes: <%= @author.pullitzer_prizes %></li> <%# #pullitzer has one l %>
   <li>Books: <%= @author.books.count %></li>
 </ul>
 
