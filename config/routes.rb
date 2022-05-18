@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post '/authors', to: 'authors#create'
   get '/authors/new', to: 'authors#new'
   get '/authors/:author_id', to: 'authors#show'
-  patch '/authors/:author_id', to: 'authors#update'
-  delete '/authors/:author_id', to: 'artists#destroy'
-  get '/authors/:author_id/edit', to: 'authors#edit'
+  patch '/authors/:id', to: 'authors#update'
+  get '/authors/:id/edit', to: 'authors#edit'
+  delete '/authors/:id', to: 'artists#destroy'
 
   get '/authors/:author_id/books', to: 'author_books#index'
   post '/authors/:author_id/books', to: 'author_books#create'
