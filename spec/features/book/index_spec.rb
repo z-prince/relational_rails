@@ -20,7 +20,7 @@ RSpec.describe 'The book index page' do
     expect(page).to have_content(Author.name)
   end
 
-  it 'displays the name of the Author for the book' do
+  it 'display only true boolean books' do
     author = Author.create!(name: 'Samantha Moore', living: true, pullitzer_prizes: 123)
     book1 = Book.create!(name: 'Descencus', pages: 208, genre: 'Thriller', fictitious: true, author_id: author.id)
     book2 = Book.create!(name: 'Help', pages: 463, genre: 'Philosophy', fictitious: false, author_id: author.id)
